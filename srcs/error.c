@@ -6,7 +6,7 @@
 /*   By: jthillar <jthillar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/25 17:24:06 by jthillar          #+#    #+#             */
-/*   Updated: 2017/10/12 13:19:01 by jthillar         ###   ########.fr       */
+/*   Updated: 2017/10/12 16:07:50 by jthillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,11 @@ int	error(int nb, char *line)
 
 int	check_is_possible(t_startend se, int n)
 {
+	if (n == 0 && se.ants <= 0)
+	{
+		ft_putendl("Error : wrong ants number");
+		return (0);
+	}
 	if (n == 0 && (se.n_link < 2 || se.w_roomentry < 2))
 		ft_putendl("Error : not enough room");
 	else if (n == 1)

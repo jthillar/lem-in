@@ -6,7 +6,7 @@
 /*   By: jthillar <jthillar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/03 15:52:27 by jthillar          #+#    #+#             */
-/*   Updated: 2017/10/12 13:47:52 by jthillar         ###   ########.fr       */
+/*   Updated: 2017/10/12 14:48:37 by jthillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,14 @@ int		check_link(t_startend *se, char *line, t_room *room)
 	if (se->startgiven == 0 || se->endgiven == 0)
 		return (error(5, line));
 	if (ft_parse_link(line, &room, se) == 0)
+	{
+		if (se->write == 0)
+		{
+			ft_printf("%s : Error : wrong link -> Stop reading map\n", line);
+			se->write = 1;
+		}
 		return (1);
+	}
 	se->n_link += 1;
 	return (2);
 }

@@ -6,7 +6,7 @@
 /*   By: jthillar <jthillar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/14 11:46:16 by jthillar          #+#    #+#             */
-/*   Updated: 2017/10/12 13:16:33 by jthillar         ###   ########.fr       */
+/*   Updated: 2017/10/12 14:47:42 by jthillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct		s_startend
 	int				n_link;
 	int				ants;
 	int				antsgiven;
+	int				write;
 }					t_startend;
 
 typedef struct		s_roomcomp
@@ -79,6 +80,7 @@ int					ft_parse_link(char *line, t_room **listroom,
 
 int					first_parse(char *line, t_startend *se);
 int					check_link(t_startend *se, char *line, t_room *room);
+int					check_tiret(char *line);
 
 int					parse_and_add_room(char *line, t_room *room,
 					t_startend *se);
