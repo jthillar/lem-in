@@ -6,7 +6,7 @@
 /*   By: jthillar <jthillar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/14 11:51:05 by jthillar          #+#    #+#             */
-/*   Updated: 2017/10/12 17:47:37 by jthillar         ###   ########.fr       */
+/*   Updated: 2017/10/12 17:52:04 by jthillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		end_lem_in(t_room *room, t_startend se)
 		return (algo(&room, se));
 }
 
-int	end_line(char *line, t_startend *se, t_room *room)
+int		end_line(char *line, t_startend *se, t_room *room)
 {
 	if (se->com == 0 && se->ants >= 0 && ft_parse_sel(line, se) == 2
 	&& ft_p_room(line) == -1 && se->antsgiven == 0)
@@ -66,7 +66,7 @@ int		main(void)
 				break ;
 		}
 		if (end_line(line, &se, room) == 0)
-			break;
+			break ;
 	}
 	return (end_lem_in(room, se));
 }

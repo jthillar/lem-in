@@ -6,7 +6,7 @@
 /*   By: jthillar <jthillar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/03 15:52:27 by jthillar          #+#    #+#             */
-/*   Updated: 2017/10/12 17:44:14 by jthillar         ###   ########.fr       */
+/*   Updated: 2017/10/12 17:59:10 by jthillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,28 @@ int		check_link(t_startend *se, char *line, t_room *room)
 	return (2);
 }
 
+int check_roomname(t_room *room, char *line)
+{
+	t_room *tmp
+
+	tmp = room;
+	while (tmp)
+	{
+		if (ft_strcmp(line, tmp->name) == 0)
+			return (0)
+		tmp = tmp->next;
+	}
+	return (1);
+}
+
 int		parse_and_add_room(char *line, t_room *room, t_startend *se)
 {
 	if (ft_p_room(line) == 0)
 		return (error(1, line));
 	if (ft_p_room(line) >= 1)
 	{
+		if (check_roomname(room, line) == 0)
+			return (error(6, line));
 		ft_putendl(line);
 		add_list_room(&room, line, ft_p_room(line), se);
 		se->w_roomentry += 1;
