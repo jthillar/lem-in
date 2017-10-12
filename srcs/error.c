@@ -6,7 +6,7 @@
 /*   By: jthillar <jthillar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/25 17:24:06 by jthillar          #+#    #+#             */
-/*   Updated: 2017/10/06 17:43:19 by jthillar         ###   ########.fr       */
+/*   Updated: 2017/10/12 13:19:01 by jthillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,7 @@ int	error(int nb, char *line)
 int	check_is_possible(t_startend se, int n)
 {
 	if (n == 0 && (se.n_link < 2 || se.w_roomentry < 2))
-	{
-		// ft_printf("n : %d // n_link : %d // room %d\n", n, se.n_link, se.w_roomentry);
 		ft_putendl("Error : not enough room");
-	}
 	else if (n == 1)
 		ft_putendl("Error : no possible way");
 	else

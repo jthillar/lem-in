@@ -6,7 +6,7 @@
 /*   By: jthillar <jthillar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/28 16:35:50 by jthillar          #+#    #+#             */
-/*   Updated: 2017/10/06 17:49:22 by jthillar         ###   ########.fr       */
+/*   Updated: 2017/10/10 16:25:19 by jthillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,5 @@ int	result_ants(t_room **room, int nb_room, t_startend *se)
 		ft_putendl("Error : too much ants and/or rooms");
 	print_result(se, way, nb_room + 1);
 	ft_memdel((void**)way);
-	return (1);
+	return (0);
 }

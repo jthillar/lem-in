@@ -6,13 +6,13 @@
 /*   By: jthillar <jthillar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/19 16:01:36 by jthillar          #+#    #+#             */
-/*   Updated: 2017/10/06 17:52:53 by jthillar         ###   ########.fr       */
+/*   Updated: 2017/10/12 13:05:47 by jthillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-int			ft_parse_nb_ants(char *line)
+int			ft_parse_nb_ants(char *line, t_startend *se)
 {
 	int nb_ants;
 	int i;
@@ -30,6 +30,7 @@ int			ft_parse_nb_ants(char *line)
 	if (nb_ants <= 0)
 		return (-2);
 	ft_putendl(line);
+	se->antsgiven = 1;
 	return (nb_ants);
 }
 

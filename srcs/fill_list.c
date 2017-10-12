@@ -6,7 +6,7 @@
 /*   By: jthillar <jthillar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/13 14:27:41 by jthillar          #+#    #+#             */
-/*   Updated: 2017/10/06 17:31:57 by jthillar         ###   ########.fr       */
+/*   Updated: 2017/10/12 13:03:18 by jthillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ t_startend	init_startend(t_startend *se)
 	se->w_roomentry = 0;
 	se->n_link = 0;
 	se->ants = -1;
+	se->antsgiven = 0;
 	return (*se);
 }
 

@@ -6,7 +6,7 @@
 /*   By: jthillar <jthillar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/14 14:11:43 by jthillar          #+#    #+#             */
-/*   Updated: 2017/10/06 17:51:39 by jthillar         ###   ########.fr       */
+/*   Updated: 2017/10/12 13:19:40 by jthillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ static int	check_startend(char *line, t_startend *se)
 		{
 			se->start = 1;
 			se->startgiven = 1;
+			ft_putendl(line);
 		}
 		else
 			return (0);
@@ -30,6 +31,7 @@ static int	check_startend(char *line, t_startend *se)
 		{
 			se->end = 1;
 			se->endgiven = 1;
+			ft_putendl(line);
 		}
 		else
 			return (0);
@@ -77,6 +79,20 @@ static int	check_coor(char *line, int space)
 	return (1);
 }
 
+int			check_tiret(char *line)
+{
+	int i;
+
+	i = 0;
+	while (line[i])
+	{
+		if (line[i] == '-')
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
 int			ft_p_room(char *line)
 {
 	int i;
@@ -98,7 +114,7 @@ int			ft_p_room(char *line)
 	}
 	if (space == 0)
 		return (-1);
-	if (space != 2 || check != 2 || space == 0)
+	if (space != 2 || check != 2 || (space == 2 && check_tiret(line) == 0))
 		return (0);
 	i = -1;
 	while (line[++i] != ' ')
