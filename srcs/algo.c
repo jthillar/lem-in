@@ -6,7 +6,7 @@
 /*   By: jthillar <jthillar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/25 17:31:40 by jthillar          #+#    #+#             */
-/*   Updated: 2017/10/04 10:31:07 by jthillar         ###   ########.fr       */
+/*   Updated: 2017/10/12 13:55:39 by jthillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int				algo(t_room **room, t_startend se)
 	ft_first_tube(room, 1);
 	while (algo.tmp->end != 1)
 	{
-		if (algo.tmp->tube->room->wei == 0)
+		if (algo.tmp->tube && algo.tmp->tube->room->wei == 0)
 		{
 			algo.i += 1;
 			algo.tmp = good_order_tube(algo.tmp, algo.i);
