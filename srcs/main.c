@@ -6,7 +6,7 @@
 /*   By: jthillar <jthillar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/14 11:51:05 by jthillar          #+#    #+#             */
-/*   Updated: 2017/10/12 17:52:04 by jthillar         ###   ########.fr       */
+/*   Updated: 2017/10/13 14:11:56 by jthillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int		main(void)
 		if (COM && ANT && PARSE && se.n_link == 0)
 			if (parse_and_add_room(line, room, &se) == 0)
 				return (0);
-		if (COM && ANT && PARSE && LOOKLINK && se.antsgiven == 0)
+			if (COM && ANT && PARSE && LOOKLINK && se.antsgiven == 0)
 		{
 			if (check_link(&se, line, room) == 0)
 				return (0);

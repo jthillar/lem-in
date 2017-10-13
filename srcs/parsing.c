@@ -6,7 +6,7 @@
 /*   By: jthillar <jthillar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/14 14:11:43 by jthillar          #+#    #+#             */
-/*   Updated: 2017/10/12 13:19:40 by jthillar         ###   ########.fr       */
+/*   Updated: 2017/10/13 13:54:41 by jthillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int	check_startend(char *line, t_startend *se)
 {
 	if (ft_strequ("##start", line))
 	{
-		if (se->start == 0 && se->startgiven == 0)
+		if (se->end == 0 && se->start == 0 && se->startgiven == 0)
 		{
 			se->start = 1;
 			se->startgiven = 1;
@@ -27,7 +27,7 @@ static int	check_startend(char *line, t_startend *se)
 	}
 	if (ft_strequ("##end", line))
 	{
-		if (se->end == 0 && se->endgiven == 0)
+		if (se->end == 0 && se->start == 0 && se->endgiven == 0)
 		{
 			se->end = 1;
 			se->endgiven = 1;

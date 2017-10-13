@@ -6,7 +6,7 @@
 /*   By: jthillar <jthillar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/03 15:52:27 by jthillar          #+#    #+#             */
-/*   Updated: 2017/10/12 18:17:02 by jthillar         ###   ########.fr       */
+/*   Updated: 2017/10/13 14:15:43 by jthillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int		first_parse(char *line, t_startend *se)
 
 int		check_link(t_startend *se, char *line, t_room *room)
 {
-	if (se->startgiven == 0 || se->endgiven == 0)
+	if (se->startgiven == 0 || se->endgiven == 0 || (se->start == 1 || se->end == 1))
 		return (error(5, line));
 	if (ft_parse_link(line, &room, se) == 0)
 	{
@@ -71,7 +71,6 @@ int		check_roomname(t_room *room, char *line, int size)
 			tmp = tmp->next;
 		}
 	}
-	ft_memdel((void**)&tmp);
 	ft_memdel((void**)&name);
 	return (1);
 }
